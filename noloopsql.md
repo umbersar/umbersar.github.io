@@ -6,7 +6,7 @@ Recently came across a problem posed at [this site](https://ryxcommar.com/2019/0
 For the sake of completeness, here is a copy of text of the problem, verbatim, from the above link.
 
 > You have a table of trading days (with no gaps) and close prices for a stock.
-```
+```TSQL
 CREATE TABLE stock (
       trading_date DATE UNIQUE,
       price FLOAT
@@ -17,7 +17,7 @@ CREATE TABLE stock (
 > You cannot sell a stock before it has been purchased. Your solution can allow buying and selling on the same trading_date (i.e. profit or loss of $0 is always, by definition, an available option); however, for some bonus points, you may write a more general solution for this problem that requires you to hold the stock for at least N days.
 
 The problem also provides some synthetic data which I am copying here again for reproducibility purposes. 
-```
+```TSQL
 INSERT INTO stock VALUES
 ('2015-06-01', 41),
 ('2015-06-02', 43),
@@ -33,7 +33,7 @@ Given this dataset, the biggest profit you can make is $6, and the smallest prof
 ## My no loop solution
 
 As stated before, the source link provides you with 2 solutions. Here is my solution to the problem:
-```
+```TSQL
 ;with CTE1 as
 (
 	select *
