@@ -52,3 +52,4 @@ select MAX(greatest_potential_profit) as highest_profit
 from CTE2
 ```
 
+Tweet me [@umbersar](https://twitter.com/umbersar)
