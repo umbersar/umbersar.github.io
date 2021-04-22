@@ -1,6 +1,6 @@
 # No Loops solution using SQL
 
-Recently came across a problem posed at https://ryxcommar.com/2019/08/05/a-cool-sql-problem-avoiding-for-loops/. Basically, it is a test for a programmer to see if he can come up with a solution using a set-based, non-procedural approach to the problem. Two set-based solutions are already presented at the link. Here I present another solution. 
+Recently came across a problem posed at https://ryxcommar.com/2019/08/05/a-cool-sql-problem-avoiding-for-loops/ . Basically, it is a test for a programmer to see if he can come up with a solution using a set-based, non-procedural approach to the problem. Two set-based solutions are already presented at the link. Here I present another solution. 
 
 ## What is the problem?
 For the sake of completeness, here is a copy of text of the problem, verbatim, from the above link.
