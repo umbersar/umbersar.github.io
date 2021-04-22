@@ -34,19 +34,21 @@ Given this dataset, the biggest profit you can make is $6, and the smallest prof
 
 As stated before, the source link provides you with 2 solutions. Here is my solution to the problem:
 ```TSQL
-;with CTE1 as
+;with CTE1(price, max_following_price, min_following_price) as
 (
-	select *
-		, max(price) over(order by trading_date asc rows BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING) as max_following_price
-		, min(price) over(order by trading_date asc rows BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING) as min_following_price
+	select price
+		, max(price) over(order by trading_date asc rows BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING) 
+		, min(price) over(order by trading_date asc rows BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING) 
 	from stock
 ),
 CTE2 as
 (
-select *, max_following_price-price as greatest_potential_profit, min_following_price - price as smallest_potential_profit
+select max_following_price-price as greatest_potential_profit
+	, min_following_price - price as smallest_potential_profit
 from CTE1 
 )
-select MAX(greatest_potential_profit) as highest_profit, MIN(smallest_potential_profit) as lowest_profit
+select MAX(greatest_potential_profit) as highest_profit
+	, MIN(smallest_potential_profit) as lowest_profit
 from CTE2
 ```
 
