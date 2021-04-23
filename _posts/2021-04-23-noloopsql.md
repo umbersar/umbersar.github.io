@@ -16,7 +16,7 @@ For the sake of completeness, here is a copy of text of the problem, verbatim, f
 
 > You have a table of trading days (with no gaps) and close prices for a stock.
 
-```TSQL
+```SQL
 CREATE TABLE stock (
       trading_date DATE UNIQUE,
       price FLOAT
@@ -29,7 +29,7 @@ CREATE TABLE stock (
 
 The problem also provides some synthetic data which I am copying here again for reproducibility purposes. 
 
-```TSQL
+```SQL
 INSERT INTO stock VALUES
 ('2015-06-01', 41),
 ('2015-06-02', 43),
@@ -47,7 +47,7 @@ Given this dataset, the biggest profit you can make is $6, and the smallest prof
 
 As stated before, the source link provides you with 2 solutions. Here is my solution to the problem:
 
-```TSQL
+```SQL
 ;with CTE1(price, max_following_price, min_following_price) as
 (
  select price
