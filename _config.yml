@@ -21,6 +21,7 @@ twitter_username: umbersar
 github_username: umbersar
 minimal_mistakes_skin: default
 search: true
+search_full_content: true # By default, only the first 50 words of a post or page’s body content is added to the Lunr search index. Enabling this could hurt performance.
 repository               : umbersar/umbersar.github.io # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 comments:
   provider               : utterances # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "custom"
@@ -45,6 +46,7 @@ markdown: kramdown
 remote_theme: mmistakes/minimal-mistakes
 # Outputting
 permalink: /:categories/:title/
+breadcrumbs: true # disabled by default
 paginate: 5 # amount of posts to show
 paginate_path: /page:num/
 timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
