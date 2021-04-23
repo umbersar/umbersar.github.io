@@ -6,7 +6,6 @@ categories:
 tags:
   - T-SQL
 ---
-## Overview
 
 Recently came across a problem posed at [this site](https://ryxcommar.com/2019/08/05/a-cool-sql-problem-avoiding-for-loops/). Basically, it is a test for a programmer to see if he can come up with a solution using a set-based, non-procedural approach to the problem. Two set-based solutions are already presented at the link. Here I present another solution.
 
