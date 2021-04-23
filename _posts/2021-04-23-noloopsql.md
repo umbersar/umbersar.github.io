@@ -1,6 +1,10 @@
 ---
 title: "No Loops solution using SQL"
 date: 2021-04-23T16:31:57+00:00
+toc: true
+toc_label: "On this page"
+toc_icon: "file-alt"
+classes: wide
 categories:
   - Blog
 tags:
