@@ -64,3 +64,13 @@ select MAX(greatest_potential_profit) as highest_profit
  , MIN(smallest_potential_profit) as lowest_profit
 from CTE2
 ```
+```html
+<script src="https://utteranc.es/client.js"
+        repo="https://github.com/umbersar/umbersar.github.io"
+        issue-term="pathname"
+        label="comments"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+```
