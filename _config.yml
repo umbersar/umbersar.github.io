@@ -78,7 +78,7 @@ plugins:
 author:
   name   : "Ramneek Singh"
   avatar : "/assets/images/bio-photo.jpg"
-  bio    : "Scientific software engineer. Amateur musician (plays dilruba). Foodie. Loves long drives. History buff."
+  bio    : "Scientific software engineer. Plays dilruba. Foodie. Loves long drives. History buff."
   links:
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
