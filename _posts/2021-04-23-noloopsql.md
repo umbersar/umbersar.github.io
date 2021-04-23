@@ -1,5 +1,5 @@
 ---
-title: "No Loops (or set based) solution using SQL"
+title: "No Loops solution using SQL"
 date: 2021-04-23T16:31:57+00:00
 categories:
   - Blog
@@ -7,7 +7,7 @@ tags:
   - T-SQL
 ---
 
-Recently came across a problem posed at [this site](https://ryxcommar.com/2019/08/05/a-cool-sql-problem-avoiding-for-loops/). Basically, it is a test for a programmer to see if he can come up with a solution using a set-based, non-procedural approach to the problem. Two set-based solutions are already presented at the link. Here I present another solution.
+Recently came across a problem posed [here](https://ryxcommar.com/2019/08/05/a-cool-sql-problem-avoiding-for-loops/). Basically, it is a test for a programmer to see if dhe can come up with a solution using a set-based, non-procedural approach to the problem. Two set-based solutions are already presented at the link. Here I present another solution.
 
 ## What is the problem?
 
