@@ -8,7 +8,9 @@ services:
         command: "bundle exec jekyll serve --config _config.yml --host 0.0.0.0 --drafts --incremental --force_polling"
         volumes:
             # - ${PWD}:/srv/jekyll
-            - C:/Users/sin17h/Documents/umbersar.github.io:/srv/jekyll
+            # - "$PWD":/srv/jekyll
+            # - C:/Users/sin17h/Documents/umbersar.github.io:/srv/jekyll
+            - .:/srv/jekyll
         ports: 
             - "0.0.0.0:4000:4000"
 
