@@ -7,6 +7,7 @@
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 
+//here I override the global font size and make it 2px smaller
 html {
     font-size: 14px; // change to whatever
   
