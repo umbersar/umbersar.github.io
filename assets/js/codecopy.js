@@ -16,6 +16,7 @@ function addCopyButtonToCode(){
 	});
 
 	// tell clipboard.js to look for clicks that match this query
+	//Clipboard is being delivered by a cdn. A backup copy of it is here: /assets/js/clipboard.min.js
 	new Clipboard('.copy-button');
 }
 
