@@ -17,11 +17,11 @@ tags:
 
 [William Jones](https://en.wikipedia.org/wiki/William_Jones_(philologist)), an English jurist and philologist, was appointed a judge of the Supreme Court at Calcutta, the then British India's highest court. To tackle the local judicial matters, he found that the knowledge of Sanskrit language was necessary as the locals would quote local laws in that language. And so he began studying Sanskrit. Upon completion of his Sanskrit studies, he made a very famous observation which some regard as what gave birth to the field of language classification. He quipped:
 
-<img src="https://user-images.githubusercontent.com/11863217/115948825-d9aeb800-a513-11eb-8acd-569d29235e68.png" width="80%" height="80%">
+<img src="https://user-images.githubusercontent.com/11863217/115948825-d9aeb800-a513-11eb-8acd-569d29235e68.png">
 
 So what is the language tree which places at it's source the Proto-Indo-European language from which Willian Jones suggested that Sanskrit, Latin and Greek were derived. The book gives us a language tree which classifies not only these 3 but a whole lot of other languages in the same family, such as Punjabi which is my native language. Here it is:
 
-<img src="https://user-images.githubusercontent.com/11863217/115949059-850c3c80-a515-11eb-8f8d-6d55b031bf69.png" width="80%" height="80%">
+<img src="https://user-images.githubusercontent.com/11863217/115949059-850c3c80-a515-11eb-8f8d-6d55b031bf69.png">
 
 Sanskrit, one of the oldest languages of India (the other being Tamil) was what the people who called themselves Aryas (or Aryans) brought with them when they arrived in India. But at that time, when these similarities were discovered, the past and migration patterns of Aryans had not been studied and that led to a lot of speculation as to who these people were.
 
