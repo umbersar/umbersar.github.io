@@ -84,7 +84,7 @@ end;
 go
 ```
 
-But if we abstract away the call to RAND in the UDF behind a view it all works and optimizer is not able to do Constant Folding.
+But if we abstract away the call to RAND in the UDF behind a view it all works and optimizer is not able to do Constant Folding. This time we get a new random number for each row of data.
 
 ```sql
 create or alter view getrandvalue
