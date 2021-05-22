@@ -9,7 +9,7 @@
 
 //here I override the global font size and make it 2px smaller
 html {
-    font-size: 14px; // change to whatever
+    font-size: 12px; // change to whatever
   
     @include breakpoint($medium) {
       font-size: 16px; // change to whatever
