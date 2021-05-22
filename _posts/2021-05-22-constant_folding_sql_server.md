@@ -1,5 +1,5 @@
 ---
-title: "Constant folding in SQL Server and workaround"
+title: "Unexpected constant folding in SQL Server and workaround"
 date: 2021-05-22T09:09:57+00:00
 toc: true
 toc_label: "On this page"
