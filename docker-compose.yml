@@ -18,3 +18,6 @@ services:
 #docker-compose up
 #as the local directory is mapped in docker container, make changes locally and they would be reflected in the container. The 
 #changes would then be served at http://localhost:4000/
+#The newly added posts might not reflect on the home page running in the docker container(or under the posts menu item) but if
+# you directly access the URL (for example :http://localhost:4000/blog/unexpected_constant_folding_sql_server/), they 
+# would be there.
