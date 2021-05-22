@@ -32,9 +32,9 @@ n                    random_num             id
 
 So that brings us to the question of WHY. It looks like that SQL Server query optimizer is executing the call to RAND once and then using that result for each row. It seems that the optimzer decides that since the calls to RAND are independent of data in each row, it can apply [Constant Folding](https://en.wikipedia.org/wiki/Constant_folding). Constant Folding evaluates an expression once to get a result and then replaces the call to that expression with the result at compile time. But it did not apply Constant Folding for calls to NEWID so to me it is not consistent behaviour on part of optimizer.
 
-## How to prevent constant folding?
+## Make RAND dependent on data in each row on the left side of CROSS APPLY
 
-Well, one way to stop the compiler from doing Constant Folding is to have the call to RAND depend on a changing column value in the row on left had side of cross apply by wirtting a corelated query. That way we make sure that compiler won't treat the call to RAND as an constant expression and as the argument to RAND changes, a new random number is generated as expected. That all works but how to prevent Constant Folding without using seed value for RAND through corelated subquery?
+Well, to test the hypothesis that optimzer decides to do Constant Folding since the calls to RAND are independent of data in each row, we have the call to RAND depend on a changing column value in the row on left had side of cross apply by wirtting a corelated query. That way we make sure that compiler won't treat the call to RAND as an constant expression and as the argument to RAND changes, a new random number is generated as expected. That all works but how to prevent Constant Folding without using seed value for RAND through corelated subquery?
 
 ```sql
 select *
