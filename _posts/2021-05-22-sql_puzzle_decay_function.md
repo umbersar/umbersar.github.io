@@ -19,7 +19,7 @@ I am always on the lookout for interesting SQL 'puzzles' and this was posted by 
 
 Here I will present my solutions to the problem. Instead of using the toy dataset that was used to describe the problem, we will generate our own 'big data' so that we can compare the approaches to the problem.
 
-So lets get to generating a table with 1000 records.
+So lets get to generating a table with 2000 records.
 
 ```sql
 create database sqlpuzzle;
@@ -47,11 +47,11 @@ return
   order by rownum;
 go
 
-drop table if exists basetable
-select dateadd(week,n,d) as [week], abs(checksum(newid())%9) as points_this_week
+drop table if exists basetable;
+select dateadd(week,n,d) as [week], abs(checksum(newid())%9) as points_this_week,  CONVERT(decimal(10,3), null) as calcval
 into basetable
 from (values('2021-10-04')) as b(d)
-cross apply getnums(1, 1000) as gn
+cross apply getnums(1, 2000) as gn;
 go
 ```
 
@@ -59,7 +59,7 @@ And there we have our very own big data (remember how big is 'big data' is very 
 
 ### Solution 1: Naive approach
 
-The first solution is a naive iterative one in which we use two cursors, one nested inside another, to calculate the decay function for each row of data.
+The first solution is a naive iterative one in which we use two cursors, one nested inside another, to calculate the decay function for each row of data. Ran this query twice on my system and for both cases it took 19 seconds to get the results.
 
 ```sql
 --Iterative algorithm. 2 cursors needed:
@@ -101,7 +101,6 @@ begin
 			end
 		close innerloop;
 		deallocate innerloop;
-		print @sumofpoints;
 		update basetable
 			set calcval = @sumofpoints
 		--where [week] = @startrow
@@ -118,7 +117,7 @@ from basetable;
 
 ### Solution 2: Hybrid Cursor-Window_function approach
 
-In this hybrid approach, we still use the outer loop cursor but inside of it, instead of using another cursor, we use window functions.
+In this hybrid approach, we still use the outer loop cursor but inside of it, instead of using another cursor, we use window functions. Ran this query twice on my system and for both cases it took 4 seconds to get the results.
 
 ```sql
 --Hybrid approach. 1 outer cursor and window function:
@@ -154,7 +153,7 @@ BEGIN
 	update basetable
 		set calcVal = @sumofPoints
 	--where [week] = @startRow
-	WHERE  CURRENT OF outerloop;
+	WHERE current OF outerloop;
  	
 	FETCH NEXT FROM outerLoop INTO @startRow;
 END 
@@ -168,7 +167,7 @@ from basetable;
 
 ### Solution 3: Set based through and through
 
-In this attempt, we used a set based approach doing away with cursors completely.
+In this attempt, we used a set based approach doing away with cursors completely. Ran this query twice on my system and for both cases it took 1 second to get the results.
 
 ```sql
 create or alter function dbo.exponentialdecayaggregation(@currentweek varchar(20))  
@@ -201,12 +200,10 @@ from basetable;
 
 ## Clean up
 
-But if we abstract away the call to RAND in the UDF behind a view it all works and optimizer is not able to do Constant Folding. 
-
 ```sql
 drop database sqlpuzzle
 ```
 
 ## Conclusion
 
-In the end, .
+We see that iterative approaches to computation took a lot more time to calculate the decay function. Set based queries outperform the iterative approaches.
