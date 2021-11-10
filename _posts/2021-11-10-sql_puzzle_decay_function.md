@@ -201,7 +201,10 @@ from basetable;
 ## Clean up
 
 ```sql
-drop database sqlpuzzle
+use master;
+go
+alter database sqlpuzzle set single_user with rollback immediate;
+drop database sqlpuzzle;
 ```
 
 ## Conclusion
